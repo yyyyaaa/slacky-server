@@ -3,6 +3,9 @@ import Sequelize from 'sequelize';
 const sequelize = new Sequelize('slacky', 'postgres', 'postgres', {
   dialect: 'postgres',
   operatorsAliases: false,
+  define: {
+    underscored: true,
+  },
 });
 const models = {
   User: sequelize.import('./user'),
